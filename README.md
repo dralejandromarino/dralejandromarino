@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr. Alejandro Marino
 
-## Getting Started
+Sitio público de la consultoría médico-legal del Dr. Daniel Alejandro Marino. Presenta la práctica, dice para quién interviene y recibe la consulta inicial.
 
-First, run the development server:
+**Oferta:** evaluaciones médico-legales y auditoría médica.  
+**Especialidad:** medicina legal.  
+**Sede presencial:** Gascón 1622, Mar del Plata.  
+**Sitio:** [dralejandromarino.com](https://dralejandromarino.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+La práctica aporta una lectura médica comprensible, documentada y útil para orientar una decisión. El sitio no promete un resultado, no sustituye a un organismo ni a un perito oficial, y no tramita el informe.
+
+## Para quién es
+
+| Destinatario | Qué encuentra en el sitio |
+| --- | --- |
+| Estudios jurídicos | Apoyo técnico en litigios laborales, civiles y de seguros |
+| Empresas | Asistencia médico-legal en contingencias laborales |
+| Particulares | Asesoramiento frente a conflictos laborales |
+| Compañías de seguros | Asistencia médico-legal a la aseguradora |
+
+Hay dos modalidades de evaluación: presencial, en Mar del Plata, y a distancia. Quien consulta indica cuál necesita.
+
+## Páginas
+
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Oferta y experiencia profesional |
+| `/servicios` | Los cuatro destinatarios, en una sola página |
+| `/perfil` | Título profesional y función de auditor de servicios de salud |
+| `/preguntas` | Preguntas frecuentes |
+| `/modalidad` | Evaluación presencial y a distancia |
+| `/contacto` | Teléfono, WhatsApp, correo y formulario |
+
+El encabezado y el pie se repiten en todas las páginas. El idioma es español (`es-AR`).
+
+El título profesional es médico especialista en cirugía general y especialista en medicina legal y medicina laboral. Auditor de servicios de salud es la función, y el sitio las distingue.
+
+## Identidad visual
+
+La dirección de marca del rediseño usa esta paleta y estas familias:
+
+| Token | Valor | Uso |
+| --- | --- | --- |
+| Petróleo | `#163F49` | Texto, encabezado y botones |
+| Blanco | `#FFFFFF` | Papel y fichas |
+| Marfil | `#F6F4EF` | Fondo |
+| Cobre | `#A66D50` | Acentos y etiquetas |
+| Lora | títulos | |
+| DM Sans | cuerpo | |
+
+## Cómo está armado
+
+Next.js 16 (App Router), React 19, TypeScript y Tailwind CSS 4. El contenido vive en `content/`. El formulario de contacto se envía con [Resend](https://resend.com) desde una acción de servidor.
+
+```text
+app/            rutas del sitio
+components/     encabezado, pie, formulario y navegación de servicios
+content/        textos
+lib/            validación y envío de la consulta
+public/images/  fotografías del rediseño
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El sitio queda en [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+Para que el formulario envíe el correo hacen falta dos variables de entorno. Sin ellas, el sitio muestra un error y no confirma el envío.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+RESEND_API_KEY=
+CONTACT_FROM_EMAIL=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`CONTACT_FROM_EMAIL` es un remitente verificado en Resend. El mensaje llega a la casilla definida en `content/site.ts`. Esas variables no se commitean.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
+## Qué queda fuera
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Honorarios, turnos, pagos, historia clínica y descarga de informes. El sitio institucional de la Policlínica Privada Gascón también queda fuera: el pie nombra el lugar de atención, y no ese otro sitio.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licencia
+
+El software se publica bajo la licencia MIT. El nombre, la matrícula, las fotografías y los textos que identifican al Dr. Marino quedan fuera de esa licencia: un fork puede reutilizar el código y tiene que retirar esa identidad. El uso debido de una consulta real está en el código de ética. Los tres textos están en [LICENSE.md](LICENSE.md).
