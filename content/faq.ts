@@ -1,3 +1,11 @@
+/**
+ * Preguntas frecuentes.
+ *
+ * `faqIntro` alimenta la columna de presentación. `faq` es el acordeón: el
+ * `id` arma el identificador de cada respuesta y la primera queda abierta.
+ */
+
+/** Antetítulo, título, bajada y enlace hacia el contacto. */
 export const faqIntro = {
   kicker: "Preguntas frecuentes",
   title: "Antes de iniciar una consulta.",
@@ -5,6 +13,12 @@ export const faqIntro = {
   cta: "¿Otra consulta? Escribime",
 } as const;
 
+/**
+ * Preguntas, en el orden del acordeón.
+ *
+ * Cubren la diferencia con la pericia oficial, el momento de consultar, la
+ * documentación, los plazos, la reserva y la atención fuera de Mar del Plata.
+ */
 export const faq = [
   {
     id: "pericia-de-parte",
@@ -44,4 +58,5 @@ export const faq = [
   },
 ] as const;
 
+/** Una pregunta del acordeón. El estado abierto guarda su `id`. */
 export type FaqItem = (typeof faq)[number];

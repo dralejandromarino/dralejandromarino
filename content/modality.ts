@@ -1,3 +1,11 @@
+/**
+ * Textos de la página de modalidad.
+ *
+ * Presenta las dos formas de evaluación y el recorrido de cuatro pasos. Quien
+ * consulta elige la modalidad al escribir; esta página no la selecciona.
+ */
+
+/** Antetítulo, título y bajada de la página. */
 export const modalityIntro = {
   kicker: "Modalidad",
   title: "Evaluación presencial y evaluación a distancia",
@@ -5,6 +13,7 @@ export const modalityIntro = {
     "Las dos modalidades se ofrecen de frente. La persona indica cuál necesita al enviar la consulta.",
 } as const;
 
+/** Recorrido de una consulta, de la primera comunicación al informe. */
 export const modalitySteps = [
   {
     number: "01",
@@ -32,6 +41,12 @@ export const modalitySteps = [
   },
 ] as const;
 
+/**
+ * Las dos modalidades, en fichas paralelas.
+ *
+ * La presencial nombra la sede. La distancia aclara que el informe puede
+ * recibirse sin traslado.
+ */
 export const evaluationModes = [
   {
     number: "01",

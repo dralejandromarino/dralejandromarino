@@ -1,10 +1,26 @@
+/**
+ * Textos de la página de servicios.
+ *
+ * La introducción la muestra la página. La lista la recorre `ServiceTabs`:
+ * cada entrada es un destinatario, con su foto y el alcance de la intervención.
+ */
+
+/** Encabezado de la página y la nota que cierra la ficha del destinatario. */
 export const servicesIntro = {
   kicker: "Asesoramiento especializado",
   title: "Asesoramiento especializado para cada necesidad.",
   description:
     "El objetivo es aportar una lectura médica comprensible, documentada y útil para la toma de decisiones, sin prometer resultados ni sustituir la función de los organismos o peritos oficiales.",
+  note: "El alcance del asesoramiento se define según la documentación y las necesidades de cada caso.",
 } as const;
 
+/**
+ * Los cuatro destinatarios, en el orden de la barra.
+ *
+ * `id` identifica la pestaña y el panel. `navLabel` es el texto de la barra
+ * y puede diferir del título de la ficha, como en empresas. `items` es el
+ * alcance que se lista al elegir ese destinatario.
+ */
 export const services = [
   {
     id: "estudios-juridicos",
@@ -28,7 +44,7 @@ export const services = [
     image: "/images/servicios-empresas.png",
     imageAlt: "Sala de reuniones de una oficina",
     items: [
-      "Auditoría de servicios de salud en el ámbito médico-laboral",
+      "Auditoría médico-legal",
       "Evaluaciones de aptitud y reincorporación",
       "Análisis técnico de reclamos",
       "Informes y segunda opinión",
@@ -43,7 +59,7 @@ export const services = [
     image: "/images/servicios-particulares.png",
     imageAlt: "Consulta entre un médico y una paciente",
     items: [
-      "Consulta presencial o a distancia",
+      "Consulta presencial o a distancia (remota)",
       "Determinación de incapacidad",
       "Informes médico-legales",
     ],
@@ -64,4 +80,5 @@ export const services = [
   },
 ] as const;
 
+/** Una entrada de `services`, con su identificador literal. */
 export type Service = (typeof services)[number];

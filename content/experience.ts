@@ -1,3 +1,11 @@
+/**
+ * Experiencia de la portada.
+ *
+ * La sección `#experiencia` de la página de inicio recorre `areas` en este
+ * orden. El pie enlaza a esa sección.
+ */
+
+/** Título de la sección y las seis áreas de práctica. */
 export const experience = {
   kicker: "Experiencia profesional",
   title: "Más de diez años de experiencia en evaluación médico-legal",

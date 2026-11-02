@@ -1,3 +1,18 @@
+/**
+ * Identidad, contacto y navegación del sitio.
+ *
+ * Los textos que identifican al doctor viven acá. El correo público no es la
+ * casilla que recibe el formulario: esa está en `CONTACT_TO_EMAIL`.
+ */
+
+/**
+ * Datos que se repiten en encabezado, pie, contacto y metadatos.
+ *
+ * `phoneDisplay` es el número tal como se lee. `phoneTel` es el que usa el
+ * enlace `tel:`. Lo mismo ocurre con WhatsApp: uno se muestra y el otro,
+ * sin signos, arma el enlace. `role` es la función de auditor y no forma
+ * parte del título profesional.
+ */
 export const site = {
   name: "Dr. Alejandro Marino",
   fullName: "Dr. Daniel Alejandro Marino",
@@ -21,6 +36,12 @@ export const site = {
   offerTitle: "Evaluaciones médico-legales y auditoría médica",
 } as const;
 
+/**
+ * Opciones del formulario de contacto.
+ *
+ * `value` viaja en el envío y `label` es lo que ve quien consulta. El
+ * formulario también permite dejar el tipo sin indicar.
+ */
 export const consultationTypes = [
   { value: "estudio-juridico", label: "Estudio jurídico" },
   { value: "compania-de-seguros", label: "Compañía de seguros" },
@@ -28,8 +49,15 @@ export const consultationTypes = [
   { value: "particular", label: "Particular" },
 ] as const;
 
+/** Valores aceptados por la acción de servidor. Sale de `consultationTypes`. */
 export type ConsultationType = (typeof consultationTypes)[number]["value"];
 
+/**
+ * Rutas que entran al sitemap.
+ *
+ * La prioridad orienta a los buscadores: la portada pesa más que el resto
+ * y el contacto queda apenas por debajo.
+ */
 export const publicPages = [
   { path: "/", priority: 1 },
   { path: "/servicios", priority: 0.8 },
@@ -39,6 +67,7 @@ export const publicPages = [
   { path: "/contacto", priority: 0.9 },
 ] as const;
 
+/** Enlaces del encabezado. El contacto no está acá: va en el botón aparte. */
 export const mainNav = [
   { href: "/servicios", label: "Servicios" },
   { href: "/perfil", label: "Perfil profesional" },
@@ -46,22 +75,31 @@ export const mainNav = [
   { href: "/modalidad", label: "Modalidad" },
 ] as const;
 
+/** Enlaces del pie. Suma la experiencia de la portada y la página de contacto. */
 export const footerNav = [
   ...mainNav,
   { href: "/#experiencia", label: "Experiencia" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
 
+/** Botón "Consultar un caso" del menú y de la página de modalidad. */
 export const contactCta = {
   href: "/contacto",
   label: "Consultar un caso",
 } as const;
 
+/** Arma el enlace de WhatsApp con el mensaje inicial ya escrito. */
 export function whatsappHref() {
   const text = encodeURIComponent(site.whatsappMessage);
   return `https://wa.me/${site.whatsappE164}?text=${text}`;
 }
 
+/**
+ * Textos de la página de perfil.
+ *
+ * `areas` incluye la función de auditor junto con las especialidades.
+ * `credentials` lista solo los títulos.
+ */
 export const profile = {
   kicker: "Dirección profesional",
   quote:

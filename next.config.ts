@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  outputFileTracingIncludes: {
+    "/contacto": ["./app/icon.png"],
+  },
   turbopack: {
     rules: {
       "*.css": {

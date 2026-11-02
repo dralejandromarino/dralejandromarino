@@ -30,6 +30,7 @@ Hay dos modalidades de evaluación: presencial, en Mar del Plata, y a distancia.
 | `/preguntas` | Preguntas frecuentes |
 | `/modalidad` | Evaluación presencial y a distancia |
 | `/contacto` | Teléfono, WhatsApp, correo y formulario |
+| Cualquier otra ruta | Página no encontrada |
 
 El encabezado y el pie se repiten en todas las páginas. El idioma es español (`es-AR`).
 
@@ -56,7 +57,8 @@ Next.js 16 (App Router), React 19, TypeScript y Tailwind CSS 4. El contenido viv
 app/            rutas del sitio
 components/     encabezado, pie, formulario y navegación de servicios
 content/        textos
-lib/            validación y envío de la consulta
+lib/            contrato del formulario de consulta
+lib/email/      saneado, cuerpo del correo, envío, cupo e IP
 public/images/  fotografías del rediseño
 ```
 
@@ -69,16 +71,18 @@ npm run dev
 
 El sitio queda en [http://localhost:3000](http://localhost:3000).
 
-Para que el formulario envíe el correo hacen falta dos variables de entorno. Sin ellas, el sitio muestra un error y no confirma el envío.
+Para que el formulario envíe el correo hacen falta tres variables de entorno. Sin ellas, el sitio muestra un error y no confirma el envío.
 
 ```bash
 RESEND_API_KEY=
 CONTACT_FROM_EMAIL=
+CONTACT_TO_EMAIL=
 ```
 
-`CONTACT_FROM_EMAIL` es un remitente verificado en Resend. El mensaje llega a la casilla definida en `content/site.ts`. Esas variables no se commitean.
+`CONTACT_FROM_EMAIL` es un remitente verificado en Resend. `CONTACT_TO_EMAIL` es la casilla que recibe la consulta. No es el correo público de `content/site.ts` y no se muestra en el sitio. Esas variables no se commitean.
 
 ```bash
+npm test
 npm run lint
 npm run build
 ```

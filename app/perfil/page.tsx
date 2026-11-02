@@ -1,5 +1,14 @@
+/**
+ * Página de perfil profesional.
+ *
+ * A la izquierda, el retrato, la cita y el resumen. A la derecha, la ficha
+ * con matrícula, áreas de práctica y títulos. El título médico y la función
+ * de auditor se muestran por separado.
+ */
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { profile, site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -8,17 +17,27 @@ export const metadata: Metadata = {
     "Dr. Daniel Alejandro Marino, matrícula provincial N.º 94.131. Médico especialista en cirugía general, medicina legal y medicina laboral. Auditor de servicios de salud.",
 };
 
+/** Presenta al profesional y su ficha de credenciales. */
 export default function PerfilPage() {
   return (
+    <RevealOnScroll>
     <section className="mx-auto grid max-w-6xl items-start gap-12 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:gap-10 md:py-20 lg:gap-16">
+      {/* Columna principal: nombre, retrato, cita y resumen. */}
       <div>
-        <p className="text-xs tracking-[0.16em] text-copper uppercase">
+        <p className="soft-enter text-xs tracking-[0.16em] text-copper uppercase">
           {profile.kicker}
         </p>
-        <h1 className="mt-4 font-serif text-4xl text-petroleum md:text-5xl">
+        <h1
+          data-testid="profile-title"
+          className="soft-enter mt-4 font-serif text-4xl text-petroleum md:text-5xl"
+          style={{ animationDelay: "70ms" }}
+        >
           {site.fullName}
         </h1>
-        <div className="mt-8 grid items-center gap-6 sm:grid-cols-[11rem_1fr]">
+        <div
+          className="soft-enter mt-8 grid items-center gap-6 sm:grid-cols-[11rem_1fr]"
+          style={{ animationDelay: "140ms" }}
+        >
           <div className="aspect-square overflow-hidden rounded-full">
             <Image
               src="/images/perfil-dr-marino.png"
@@ -35,9 +54,19 @@ export default function PerfilPage() {
             <footer className="mt-4 text-sm text-copper">— {profile.quoteBy}</footer>
           </blockquote>
         </div>
-        <p className="mt-8 leading-relaxed text-petroleum/80">{profile.summary}</p>
+        <p
+          className="soft-enter mt-8 leading-relaxed text-petroleum/80"
+          style={{ animationDelay: "210ms" }}
+        >
+          {profile.summary}
+        </p>
       </div>
-      <aside className="bg-paper p-8 shadow-[0_10px_40px_rgba(22,63,73,0.06)]">
+      {/* Ficha lateral: matrícula, áreas de práctica y títulos. */}
+      <aside
+        data-testid="profile-card"
+        className="reveal bg-paper p-8 shadow-[0_10px_40px_rgba(22,63,73,0.06)]"
+        style={{ "--reveal-delay": "80ms" } as CSSProperties}
+      >
         <p className="text-xs tracking-[0.16em] text-copper uppercase">
           {profile.cardKicker}
         </p>
@@ -69,5 +98,6 @@ export default function PerfilPage() {
         </div>
       </aside>
     </section>
+    </RevealOnScroll>
   );
 }
