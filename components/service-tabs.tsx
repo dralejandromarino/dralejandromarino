@@ -38,6 +38,7 @@ export function ServiceTabs({ children }: { children: ReactNode }) {
         src={active.image}
         alt={active.imageAlt}
         fill
+        quality={90}
         sizes="(min-width: 768px) 527px, 100vw"
         className="object-cover"
       />

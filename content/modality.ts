@@ -1,51 +1,45 @@
 /**
- * Textos de la página de modalidad.
+ * Textos de `/contacto`.
  *
- * Presenta las dos formas de evaluación y el recorrido de cuatro pasos. Quien
- * consulta elige la modalidad al escribir; esta página no la selecciona.
+ * Arriba, el recorrido de la consulta y las dos fichas de evaluación.
+ * Debajo, el título del formulario.
  */
 
-/** Antetítulo, título y bajada de la página. */
-export const modalityIntro = {
-  kicker: "Modalidad",
-  title: "Evaluación presencial y evaluación a distancia",
+/** Antetítulo, título y bajada de la consulta. */
+export const consultaIntro = {
+  kicker: "Consulta y contacto",
+  title: "Consulte su caso",
   description:
-    "Las dos modalidades se ofrecen de frente. La persona indica cuál necesita al enviar la consulta.",
+    "Podrá acceder a evaluaciones médicas y preinformes de factibilidad mediante una modalidad ágil y a distancia, sin necesidad de trasladarse.",
 } as const;
 
-/** Recorrido de una consulta, de la primera comunicación al informe. */
-export const modalitySteps = [
+/** Tres pasos, de la primera comunicación al informe pericial. */
+export const consultaSteps = [
   {
     number: "01",
-    title: "Consulta inicial",
+    title: "Consulta digital inicial",
     description:
-      "Se identifica el problema, el destinatario del informe y la finalidad de la intervención.",
+      "Recibimos su consulta por correo y realizamos una evaluación documental del caso.",
   },
   {
     number: "02",
-    title: "Revisión",
+    title: "Evaluación documental",
     description:
-      "Se analiza la documentación disponible y se identifican los antecedentes faltantes.",
+      "Le enviamos un preinforme de factibilidad según las consideraciones médico-legales y laborales obtenidas del análisis documental del caso.",
   },
   {
     number: "03",
-    title: "Evaluación",
+    title: "Redacción de informe médico pericial",
     description:
-      "Se realiza el examen presencial o la entrevista técnica, según la modalidad indicada.",
-  },
-  {
-    number: "04",
-    title: "Informe",
-    description:
-      "Se entrega una opinión médico-legal dentro del alcance acordado.",
+      "Cuando corresponda, se redacta un informe pericial de parte médico con las consideraciones médico-legales y laborales del caso.",
   },
 ] as const;
 
 /**
- * Las dos modalidades, en fichas paralelas.
+ * Las dos evaluaciones, en fichas paralelas.
  *
- * La presencial nombra la sede. La distancia aclara que el informe puede
- * recibirse sin traslado.
+ * La presencial nombra la sede. La distancia queda en la herramienta,
+ * sin la frase sobre recibir el informe sin traslado.
  */
 export const evaluationModes = [
   {
@@ -56,7 +50,10 @@ export const evaluationModes = [
   {
     number: "02",
     title: "Evaluación a distancia",
-    description:
-      "Se realiza con herramientas digitales. El informe puede recibirse sin traslado.",
+    description: "Se realiza con herramientas digitales.",
   },
 ] as const;
+
+/** Título que queda encima del formulario, en la sección de contacto. */
+export const contactFormTitle =
+  "Describa brevemente su caso, detallando si requiere una evaluación presencial o a distancia.";

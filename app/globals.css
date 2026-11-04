@@ -35,6 +35,23 @@ body {
   }
 }
 
+/* Acordeón de preguntas: la respuesta crece y se desvanece con la misma curva del sitio. */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+.faq-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
 /* Transición al cambiar de destinatario en la página de servicios. */
 @keyframes service-swap {
   from {
@@ -56,6 +73,12 @@ body {
 
   .soft-enter {
     animation: soft-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .faq-panel {
+    transition:
+      grid-template-rows 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   /* `.reveal` arranca oculto. `.is-visible` lo muestra al entrar en pantalla. */

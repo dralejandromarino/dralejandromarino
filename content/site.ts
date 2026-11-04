@@ -16,8 +16,7 @@
 export const site = {
   name: "Dr. Alejandro Marino",
   fullName: "Dr. Daniel Alejandro Marino",
-  specialty: "Medicina legal",
-  topbar: "Consultoría médico-legal",
+  specialty: "Consultoría médico-legal",
   license: "Matrícula Provincial N.º 94.131",
   professionalTitle:
     "Médico especialista en cirugía general y especialista en medicina legal y medicina laboral",
@@ -33,7 +32,7 @@ export const site = {
   placeLine: "Mar del Plata · Policlínica Privada Gascón",
   origin: "dralejandromarino.com",
   url: "https://dralejandromarino.com",
-  offerTitle: "Evaluaciones médico-legales y auditoría médica",
+  offerTitle: "Consultoría legal e informes médicos",
 } as const;
 
 /**
@@ -63,7 +62,6 @@ export const publicPages = [
   { path: "/servicios", priority: 0.8 },
   { path: "/perfil", priority: 0.8 },
   { path: "/preguntas", priority: 0.6 },
-  { path: "/modalidad", priority: 0.7 },
   { path: "/contacto", priority: 0.9 },
 ] as const;
 
@@ -72,7 +70,6 @@ export const mainNav = [
   { href: "/servicios", label: "Servicios" },
   { href: "/perfil", label: "Perfil profesional" },
   { href: "/preguntas", label: "Preguntas" },
-  { href: "/modalidad", label: "Modalidad" },
 ] as const;
 
 /** Enlaces del pie. Suma la experiencia de la portada y la página de contacto. */
@@ -82,10 +79,10 @@ export const footerNav = [
   { href: "/contacto", label: "Contacto" },
 ] as const;
 
-/** Botón "Consultar un caso" del menú y de la página de modalidad. */
+/** Botón "Consulte su caso" del menú. */
 export const contactCta = {
   href: "/contacto",
-  label: "Consultar un caso",
+  label: "Consulte su caso",
 } as const;
 
 /** Arma el enlace de WhatsApp con el mensaje inicial ya escrito. */

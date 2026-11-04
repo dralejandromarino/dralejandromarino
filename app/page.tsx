@@ -22,25 +22,22 @@ export default function HomePage() {
       >
         <div>
           <p className="soft-enter text-xs tracking-[0.16em] text-copper uppercase">
-            Especialista en medicina legal · {site.city}
+            Especialista en medicina legal y laboral. {site.city}
           </p>
           <h1
             data-testid="home-title"
             className="soft-enter mt-5 font-serif text-4xl leading-[1.05] text-petroleum md:text-[3.25rem] lg:text-[3.5rem]"
             style={{ animationDelay: "70ms" }}
           >
-            <span className="block">Evaluaciones</span>
-            <span className="block">médico-legales</span>
-            <span className="block whitespace-nowrap">y Auditoría médica</span>
+            <span className="block">Consultoría legal</span>
+            <span className="block">e informes médicos</span>
           </h1>
           <p
             className="soft-enter mt-6 max-w-xl leading-relaxed text-petroleum/80"
             style={{ animationDelay: "140ms" }}
           >
-            Asesoramiento especializado para Estudios jurídicos, Compañías de
-            seguros, Empresas y Particulares. Análisis documental, evaluación
-            clínica e informes técnicamente fundados para orientar decisiones y
-            controversias.
+            Asesoramiento pericial especializado para Estudios jurídicos,
+            Compañías de seguros, Empresas y Particulares.
           </p>
           <div
             className="soft-enter mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
