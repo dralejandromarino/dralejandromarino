@@ -39,7 +39,7 @@ export function SiteFooter() {
           <p>{site.placeLine}</p>
         </div>
         <p className="mt-4 text-sm">
-          © {site.name} · Consultoría médico-legal · {site.city}
+          © {site.name} · {site.city}
         </p>
       </div>
     </footer>

@@ -10,7 +10,7 @@ export const servicesIntro = {
   kicker: "Asesoramiento especializado",
   title: "Asesoramiento especializado para cada necesidad.",
   description:
-    "El objetivo es aportar una lectura médica comprensible, documentada y útil para la toma de decisiones, sin prometer resultados ni sustituir la función de los organismos o peritos oficiales.",
+    "El objetivo es ofrecer una evaluación médica clara, fundamentada y útil para la toma de decisiones, considerando criterios de organismos y peritos oficiales.",
   note: "El alcance del asesoramiento se define según la documentación y las necesidades de cada caso.",
 } as const;
 
@@ -28,7 +28,7 @@ export const services = [
     navLabel: "Estudios jurídicos",
     kicker: "Apoyo técnico en litigios laborales, civiles y de seguros",
     image: "/images/servicios-estudios-juridicos.png",
-    imageAlt: "Apretón de manos sobre un escritorio con documentos jurídicos",
+    imageAlt: "El Dr. Alejandro Marino revisa un caso junto a dos abogados",
     items: [
       "Evaluación preliminar",
       "Informes periciales de parte",
@@ -42,7 +42,7 @@ export const services = [
     navLabel: "Empresas y RR. HH.",
     kicker: "Asistencia médico-legal en contingencias laborales",
     image: "/images/servicios-empresas.png",
-    imageAlt: "Sala de reuniones de una oficina",
+    imageAlt: "El Dr. Alejandro Marino en consulta con un trabajador",
     items: [
       "Auditoría médico-legal",
       "Evaluaciones de aptitud y reincorporación",
@@ -57,7 +57,7 @@ export const services = [
     navLabel: "Particulares",
     kicker: "Asesoramiento profesional frente a conflictos laborales",
     image: "/images/servicios-particulares.png",
-    imageAlt: "Consulta entre un médico y una paciente",
+    imageAlt: "El Dr. Alejandro Marino en consulta con un paciente",
     items: [
       "Consulta presencial o a distancia (remota)",
       "Determinación de incapacidad",
@@ -70,7 +70,7 @@ export const services = [
     navLabel: "Compañías de seguros",
     kicker: "Asistencia médico-legal a la aseguradora",
     image: "/images/servicios-seguros.png",
-    imageAlt: "Reunión de trabajo revisando documentos y gráficos",
+    imageAlt: "El Dr. Alejandro Marino revisa un expediente con una profesional",
     items: [
       "Evaluación de siniestros y secuelas en asegurados",
       "Determinación de daño en siniestros de responsabilidad civil",

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Evaluaciones médico-legales y auditoría médica para estudios jurídicos, compañías de seguros, empresas y particulares. Atención presencial en Mar del Plata y evaluación a distancia.",
+    "Consultoría legal e informes médicos para estudios jurídicos, compañías de seguros, empresas y particulares. Mar del Plata.",
 };
 
 /** Color de la interfaz del navegador en dispositivos móviles. */

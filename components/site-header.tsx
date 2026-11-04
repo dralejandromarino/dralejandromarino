@@ -1,7 +1,7 @@
 /**
  * Encabezado fijo del sitio.
  *
- * La franja superior muestra la consultoría y el teléfono. Debajo quedan el
+ * La franja superior muestra el teléfono y la ciudad. Debajo quedan el
  * nombre del doctor y la navegación, que en pantallas chicas se pliega.
  */
 import Link from "next/link";
@@ -14,8 +14,7 @@ export function SiteHeader() {
     <header data-testid="site-header" className="sticky top-0 z-30 bg-ivory">
       {/* Teléfono y ciudad, sobre fondo petróleo. */}
       <div className="bg-petroleum text-paper">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-2 text-xs">
-          <p>{site.topbar}</p>
+        <div className="mx-auto flex max-w-6xl items-center justify-end px-5 py-2 text-xs">
           <a data-testid="site-phone" href={`tel:${site.phoneTel}`}>
             {site.phoneDisplay} · {site.city}
           </a>

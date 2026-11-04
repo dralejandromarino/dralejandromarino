@@ -67,7 +67,7 @@ export function buildConsultationHtml(
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;">
           <tr>
             <td align="center" bgcolor="#163f49" style="background:#163f49;padding:12px 24px;font-family:${sans};font-size:12px;letter-spacing:0.08em;color:#ffffff;">
-              ${escapeHtml(site.topbar)}
+              ${escapeHtml(site.phoneDisplay)} · ${escapeHtml(site.city)}
             </td>
           </tr>
           <tr>
@@ -129,7 +129,7 @@ export function buildConsultationText(input: ConsultationEmailContent) {
     (item) => item.value === input.consultationType,
   )?.label;
   const lines = [
-    site.topbar,
+    `${site.phoneDisplay} · ${site.city}`,
     site.name,
     site.specialty,
     "",

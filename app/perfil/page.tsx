@@ -45,8 +45,9 @@ export default function PerfilPage() {
               width={537}
               height={537}
               priority
+              quality={90}
               sizes="11rem"
-              className="h-full w-full origin-top scale-125 object-cover object-[center_18%]"
+              className="h-full w-full object-cover object-[center_22%]"
             />
           </div>
           <blockquote>
